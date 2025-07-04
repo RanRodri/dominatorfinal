@@ -15,7 +15,7 @@ class Towing extends Component {
               <div className="flex min-h-[320px] sm:min-h-[480px] flex-col gap-6 sm:gap-8 bg-cover bg-center bg-no-repeat rounded-xl items-start justify-end px-4 pb-10 sm:px-10"
                 style={{
                   backgroundImage:
-                    'linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url(/Images/towing.jpeg)',
+                    'linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url(/Images/towing.jpg)',
                 }}
               >
                 <div className="flex flex-col gap-2 text-left">

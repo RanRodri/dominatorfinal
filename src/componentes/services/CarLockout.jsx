@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import Header from "../Header";
 import Footer from "../Footer";
 import HeroBanner from "../../reutilizable/HeroBanner";
 
 function CarLockout() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+
 
   return (
     <>

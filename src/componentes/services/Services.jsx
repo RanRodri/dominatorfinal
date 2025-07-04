@@ -10,13 +10,13 @@ class Services extends Component {
         name: "Towing",
         desc: "Safe and reliable towing services for all types of vehicles, available 24/7.",
         path: "/towing",
-        img: "/Images/towing.jpeg",
+        img: "/Images/towing.jpg",
       },
       {
         name: "Recovery",
         desc: "Assistance for vehicles stuck in ditches, mud, or off-road conditions.",
         path: "/recovery",
-        img: "/Images/recovery.jpeg",
+        img: "/Images/recovery.jpg",
       },
       {
         name: "Car Lockout",
@@ -34,19 +34,19 @@ class Services extends Component {
         name: "Fuel Delivery",
         desc: "Out of gas? We’ll deliver fuel to your location anytime, anywhere.",
         path: "/fueldelivery",
-        img: "/Images/delivery.jpeg",
+        img: "/Images/delivery.jpg",
       },
       {
         name: "Impound Management",
         desc: "Support with impounded vehicles and coordination with local impound lots.",
         path: "/management",
-        img: "/Images/IMG_6054.jpeg",
+        img: "/Images/management.jpg",
       },
       {
         name: "Emergency Roadside",
         desc: "Full roadside assistance including flat tires, breakdowns, and minor repairs.",
         path: "/roadside",
-        img: "/Images/road.jpeg",
+        img: "/Images/road.jpg",
       },
     ];
 

@@ -15,7 +15,7 @@ class Management extends Component {
                 <div className="p-4 sm:p-6 md:p-10 flex min-h-[480px] flex-col gap-6 sm:gap-8 rounded-xl items-start justify-end bg-cover bg-center bg-no-repeat"
                   style={{
                     backgroundImage:
-                      'linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url(/Images/management.jpeg)',
+                      'linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url(/Images/management.jpg)',
                   }}
                 >
                   <div className="flex flex-col gap-2 text-left">

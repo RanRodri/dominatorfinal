@@ -20,7 +20,7 @@ class About extends Component {
                   className="flex flex-col gap-6 sm:gap-8 bg-cover bg-center bg-no-repeat rounded-xl items-start justify-end px-4 pb-10 sm:px-10 min-h-[320px]"
                   style={{
                     backgroundImage:
-                      'linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url("/Images/about.jpeg")',
+                      'linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url("/Images/about.jpg")',
                   }}
                 >
                   <div className="flex flex-col gap-2 text-left text-white">
@@ -61,7 +61,7 @@ class About extends Component {
                     </div>
                     <div
                       className="bg-center bg-no-repeat aspect-video bg-cover rounded-xl md:flex-1"
-                      style={{ backgroundImage: 'url("/Images/about1.jpeg")' }}
+                      style={{ backgroundImage: 'url("/Images/about1.jpg")' }}
                     />
                   </div>
                 </div>
@@ -95,7 +95,7 @@ class About extends Component {
                     </div>
                     <div
                       className="bg-center bg-no-repeat aspect-video bg-cover rounded-xl md:flex-1"
-                      style={{ backgroundImage: 'url("/Images/about2.jpeg")' }}
+                      style={{ backgroundImage: 'url("/Images/about2.jpg")' }}
                     />
                   </div>
                 </div>

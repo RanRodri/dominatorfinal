@@ -24,13 +24,13 @@ class Home extends Component {
 
   render() {
     const services = [
-      { name: "Towing", img: "/Images/towing.jpeg" },
-      { name: "Recovery", img: "/Images/recovery.jpeg" },
+      { name: "Towing", img: "/Images/towing.jpg" },
+      { name: "Recovery", img: "/Images/recovery.jpg" },
       { name: "Car Lockout", img: "/Images/carlockout1.jpg" },
       { name: "Jump Start", img: "/Images/jumpstart1.jpg" },
       { name: "Fuel Delivery", img: "/Images/fueldelivery1.jpg" },
-      { name: "Impound Management", img: "/Images/management.jpeg" },
-      { name: "Emergency Roadside", img: "/Images/emergenci.jpeg" },
+      { name: "Impound Management", img: "/Images/management.jpg" },
+      { name: "Emergency Roadside", img: "/Images/emergenci.jpg" },
     ];
 
     return (
@@ -129,7 +129,7 @@ class Home extends Component {
                   </div>
                   <div
                     className="w-full md:w-1/2 bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
-                    style={{ backgroundImage: `url("/Images/about.jpeg")` }}
+                    style={{ backgroundImage: `url("/Images/about.jpg")` }}
                   ></div>
                 </div>
               </div>
