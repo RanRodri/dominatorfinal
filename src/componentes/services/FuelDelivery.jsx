@@ -1,45 +1,64 @@
 import React, { Component } from "react";
 import Header from "../Header";
 import Footer from "../Footer";
-import recovery from "../../Images/delivery.jpeg";
 import { Link } from "react-router-dom";
 
 class FuelDelivery extends Component {
+    state = {
+    currentImageIndex: 0,
+    images: [
+      "/Images/fueldelivery1.jpg",
+      "/Images/fueldelivery2.jpg",
+      "/Images/fueldelivery3.jpg",
+    ],
+  };
+    componentDidMount() {
+    this.interval = setInterval(() => {
+      this.setState((prevState) => ({
+        currentImageIndex:
+          (prevState.currentImageIndex + 1) % prevState.images.length,
+      }));
+    }, 4000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
   render() {
+     const { images, currentImageIndex } = this.state;
+    const currentImage = images[currentImageIndex];
     return (
       <>
         <Header />
         <main>
-            <div class="px-40 flex flex-1 justify-center py-5">
-          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-            <div class="@container">
-              <div class="@[480px]:p-4">
-                <div
-                  class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-start justify-end px-4 pb-10 @[480px]:px-10"
-                  style={{
-  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url(${recovery})`,
-}}
-                >
-                  <div class="flex flex-col gap-2 text-left">
-                    <h1
-                      class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
+               <div className="px-4 sm:px-6 md:px-10 lg:px-20 flex flex-1 justify-center py-5">
+            <div className="layout-content-container flex flex-col w-full max-w-5xl">
+              <div className="@container">
+                <div className="@sm:p-4">
+                  <div
+                    className="relative flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @sm:gap-8 @sm:rounded-xl items-start justify-end px-4 pb-10 @sm:px-10 transition-all duration-1000 ease-in-out"
+                    style={{
+                      backgroundImage: `linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url(${currentImage})`,
+                    }}
+                  >
+                    <div className="flex flex-col gap-2 text-left">
+                      <h1 className="text-white text-3xl sm:text-4xl font-black leading-tight tracking-[-0.033em]">
+                        Fuel Delivery
+                      </h1>
+                      <h2 className="text-white text-sm sm:text-base font-normal leading-normal">
+                        We bring fuel to you, wherever and whenever you need it.
+                      </h2>
+                    </div>
+                    <Link
+                      to="/request"
+                      className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 sm:h-12 sm:px-5 bg-[#f9911a] text-[#181511] text-sm font-bold leading-normal tracking-[0.015em]"
                     >
-                      Fuel Delivery
-                    </h1>
-                    <h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
-                      We bring fuel to you, wherever and whenever you need it.
-                    </h2>
+                      <span className="truncate">Request this service</span>
+                    </Link>
                   </div>
-                 <Link
-  to="/request"
-  className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#f9911a] text-[#181511] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
->
-  <span className="truncate">Request this service</span>
-</Link>
-
                 </div>
               </div>
-            </div>
             <h2 class="text-[#181411] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">What is Fuel Delivery?</h2>
             <p class="text-[#181411] text-base font-normal leading-normal pb-3 pt-1 px-4">
               Fuel Delivery is a service designed for situations where your vehicle has run out of fuel. Instead of walking long distances or seeking help, our team quickly
@@ -162,9 +181,6 @@ class FuelDelivery extends Component {
                 <p class="text-[#181411] text-base font-normal leading-normal">Safe and secure fuel handling</p>
               </label>
             </div>
-           Aquí tienes el cambio adaptado a React y Tailwind, reemplazando el `h2` y `p` por la estructura en forma de pasos con íconos SVG:
-
-```jsx
 <h2 className="text-[#181411] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">How Does it Work?</h2>
 <div className="grid grid-cols-[40px_1fr] gap-x-2 px-4">
   <div className="flex flex-col items-center gap-1 pt-3">

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Header from "../Header";
 import Footer from "../Footer";
-import recovery from "../../Images/management.jpeg";
 import { Link } from "react-router-dom";
 
 class Management extends Component {
@@ -10,36 +9,31 @@ class Management extends Component {
       <>
         <Header />
         <main>
-          <div class="px-40 flex flex-1 justify-center py-5">
-          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-             <div class="@container">
-              <div class="@[480px]:p-4">
-                <div
-                  class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-start justify-end px-4 pb-10 @[480px]:px-10"
-                 style={{
-  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url(${recovery})`,
-}}
+           <div className="px-4 sm:px-6 md:px-10 lg:px-20 flex justify-center py-5">
+            <div className="flex flex-col w-full max-w-5xl">
+              <div className="container mx-auto">
+                <div className="p-4 sm:p-6 md:p-10 flex min-h-[480px] flex-col gap-6 sm:gap-8 rounded-xl items-start justify-end bg-cover bg-center bg-no-repeat"
+                  style={{
+                    backgroundImage:
+                      'linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url(/Images/management.jpeg)',
+                  }}
                 >
-                  <div class="flex flex-col gap-2 text-left">
-                    <h1
-                      class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
-                    >
-                     Impound Management
+                  <div className="flex flex-col gap-2 text-left">
+                    <h1 className="text-white text-3xl sm:text-5xl font-black leading-tight tracking-tight">
+                      Impound Management
                     </h1>
-                    <h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
-                     We help you recover your vehicle from any legal impound lot quickly and safely.
+                    <h2 className="text-white text-sm sm:text-base font-normal">
+                      We help you recover your vehicle from any legal impound lot quickly and safely.
                     </h2>
                   </div>
                   <Link
-  to="/request"
-  className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#f9911a] text-[#181511] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
->
-  <span className="truncate">Request this service</span>
-</Link>
-
+                    to="/request"
+                    className="mt-4 flex w-full sm:w-auto items-center justify-center rounded-full h-10 sm:h-12 px-4 sm:px-5 bg-[#f9911a] text-[#181511] text-sm sm:text-base font-bold"
+                  >
+                    <span className="truncate">Request this service</span>
+                  </Link>
                 </div>
               </div>
-            </div>
             <h2 class="text-[#181411] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">What is Impound Management?</h2>
             <p class="text-[#181411] text-base font-normal leading-normal pb-3 pt-1 px-4">
               Impound Management is a service designed to help you when your vehicle has been towed and is in an impound lot. Our team guides, supports, and manages the entire

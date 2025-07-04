@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../Images/logo.png"
+import { Menu, X } from "lucide-react"; // íconos opcionales (usa Heroicons o Lucide)
 
 const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const menuItems = [
     { name: "Home", path: "/" },
     { name: "Services", path: "/services" },
@@ -12,34 +14,71 @@ const Header = () => {
   ];
 
   return (
-    <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f5f2f0] px-10 py-3">
-      <div className="flex items-center gap-4 text-[#181511]">
-       <div className="h-11 w-auto">
-  <img src={logo} alt="Dominator Towing Logo" className="h-full w-auto object-contain" />
-</div>
+    <header className="w-full border-b border-[#f5f2f0] px-6 py-3">
+      <div className="flex items-center justify-between">
+        {/* Logo */}
+        <Link to="/" className="h-11 w-auto flex-shrink-0">
+          <img
+            src="/Images/logo.png"
+            alt="Dominator Towing Logo"
+            className="h-full w-auto object-contain"
+          />
+        </Link>
 
-
-    
-      </div>
-
-      <div className="flex flex-1 justify-end gap-8">
-        <nav className="flex items-center gap-9">
-          {menuItems.map(({ name, path }) => (
-            <Link
-              key={name}
-              to={path}
-              className="text-[#181511] text-sm font-medium leading-normal"
-            >
-              {name}
-            </Link>
-          ))}
+        {/* Desktop Menu */}
+        <nav className="hidden md:flex flex-1 justify-end items-center gap-8">
+          <div className="flex items-center gap-9">
+            {menuItems.map(({ name, path }) => (
+              <Link
+                key={name}
+                to={path}
+                className="text-[#181511] text-sm font-medium"
+              >
+                {name}
+              </Link>
+            ))}
+          </div>
+          <Link
+            to="/request"
+            className="h-10 px-4 bg-[#f39420] rounded-lg text-sm font-bold text-[#181511] flex items-center"
+          >
+            Request Assistance
+          </Link>
         </nav>
 
-       <Link to="/request" className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#f39420] text-[#181511] text-sm font-bold leading-normal tracking-[0.015em]">
-  <span className="truncate">Request Assistance</span>
-</Link>
-
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="md:hidden text-[#181511] focus:outline-none"
+        >
+          {menuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
+
+      {/* Mobile Menu Content */}
+      {menuOpen && (
+        <div className="md:hidden mt-3 space-y-3">
+          <nav className="flex flex-col gap-3">
+            {menuItems.map(({ name, path }) => (
+              <Link
+                key={name}
+                to={path}
+                className="text-[#181511] text-sm font-medium"
+                onClick={() => setMenuOpen(false)}
+              >
+                {name}
+              </Link>
+            ))}
+          </nav>
+          <Link
+            to="/request"
+            onClick={() => setMenuOpen(false)}
+            className="block w-full text-center h-10 px-4 bg-[#f39420] rounded-lg text-sm font-bold text-[#181511]"
+          >
+            Request Assistance
+          </Link>
+        </div>
+      )}
     </header>
   );
 };

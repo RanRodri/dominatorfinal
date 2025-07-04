@@ -2,85 +2,92 @@ import React, { Component } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 
-// Importa todas las imágenes deseadas para la galería
-import about from "../Images/about.jpeg";
-import about1 from "../Images/about1.jpeg";
-import about2 from "../Images/about2.jpeg";
-import delivery from "../Images/delivery.jpeg";
-import emergenci from "../Images/emergenci.jpeg";
-import img2745 from "../Images/IMG_2745.jpeg";
-import img3076 from "../Images/IMG_3076.jpeg";
-import img6054 from "../Images/IMG_6054.jpeg";
-import img6141 from "../Images/IMG_6141.jpeg";
-import img6890 from "../Images/IMG_6890.jpeg";
-import img6907 from "../Images/IMG_6907.jpeg";
-import jump from "../Images/jump.jpeg";
-import lockout from "../Images/lockout.jpeg";
-// import lockout2 from "../Images/lockout2.mp4"; // omitido
-// import logo from "../Images/logo.png"; // omitido
-import management from "../Images/management.jpeg";
-import recovery from "../Images/recovery.jpeg";
-import road from "../Images/road.jpeg";
-import towing from "../Images/towing.jpeg";
-
 class Gallery extends Component {
+  state = {
+    selectedImage: null,
+  };
+
+  openModal = (image) => {
+    this.setState({ selectedImage: image });
+  };
+
+  closeModal = () => {
+    this.setState({ selectedImage: null });
+  };
+
   render() {
-    // Todas las imágenes en un array para renderizarlas fácilmente
+    const { selectedImage } = this.state;
+
     const images = [
-      about,
-      about1,
-      about2,
-      delivery,
-      emergenci,
-      img2745,
-      img3076,
-      img6054,
-      img6141,
-      img6890,
-      img6907,
-      jump,
-      lockout,
-      management,
-      recovery,
-      road,
-      towing,
+      "/Images/about.jpeg",
+      "/Images/about1.jpeg",
+      "/Images/about2.jpeg",
+      "/Images/delivery.jpeg",
+      "/Images/emergenci.jpeg",
+      "/Images/IMG_2745.jpeg",
+      "/Images/IMG_3076.jpeg",
+      "/Images/IMG_6054.jpeg",
+      "/Images/IMG_6141.jpeg",
+      "/Images/IMG_6890.jpeg",
+      "/Images/IMG_6907.jpeg",
+      "/Images/jump.jpeg",
+      "/Images/lockout.jpeg",
+      "/Images/management.jpeg",
+      "/Images/recovery.jpeg",
+      "/Images/road.jpeg",
+      "/Images/towing.jpeg",
     ];
 
     return (
       <>
         <Header />
-        <main>
-          <div className="px-40 flex flex-1 justify-center py-5">
-            <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
-              <div className="flex flex-wrap justify-between gap-3 p-4">
-                <div className="flex min-w-72 flex-col gap-3">
-                  <p className="text-[#161412] tracking-light text-[32px] font-bold leading-tight">
-                    Gallery
-                  </p>
-                  <p className="text-[#81756a] text-sm font-normal leading-normal">
-                    Explore our work and see how we handle your towing needs with precision and care.
-                  </p>
+        <main className="flex flex-col items-center px-4 sm:px-8 md:px-12 py-8">
+          <div className="max-w-screen-xl w-full">
+            <div className="mb-6">
+              <h1 className="text-3xl font-bold text-[#161412]">Gallery</h1>
+              <p className="text-sm text-[#81756a] mt-2">
+                Explore our work and see how we handle your towing needs with precision and care.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+              {images.map((image, index) => (
+                <div key={index} className="cursor-pointer" onClick={() => this.openModal(image)}>
+                  <div
+                    className="w-full aspect-square bg-center bg-no-repeat bg-cover rounded-xl"
+                    style={{ backgroundImage: `url(${image})` }}
+                  />
                 </div>
-              </div>
+              ))}
+            </div>
 
-              <div className="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
-                {images.map((image, index) => (
-                  <div className="flex flex-col gap-3" key={index}>
-                    <div
-                      className="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                      style={{ backgroundImage: `url(${image})` }}
-                    ></div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="flex px-4 py-3 justify-center">
-                <button className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#f4f2f1] text-[#161412] text-sm font-bold leading-normal tracking-[0.015em]">
-                  <span className="truncate">View More</span>
-                </button>
-              </div>
+            <div className="flex justify-center mt-6">
+              <button className="rounded-full bg-[#f4f2f1] text-[#161412] font-bold text-sm px-6 py-2">
+                View More
+              </button>
             </div>
           </div>
+
+          {/* Modal */}
+          {selectedImage && (
+            <div
+              className="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center"
+              onClick={this.closeModal}
+            >
+              <div
+                className="relative bg-white rounded-lg max-w-4xl w-full p-4"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button
+                  className="absolute top-2 right-2 text-black text-xl font-bold"
+                  onClick={this.closeModal}
+                >
+                  ×
+                </button>
+                <img src={selectedImage} alt="Expanded" className="w-full h-auto rounded-md" />
+              </div>
+            </div>
+          )}
         </main>
         <Footer />
       </>
