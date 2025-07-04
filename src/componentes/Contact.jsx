@@ -86,14 +86,15 @@ class Contact extends Component {
                 <h2 className="text-[#161412] text-xl font-bold px-4 pt-6 pb-3">Our Location</h2>
                 <div className="px-4 pb-8">
                   <iframe
-                    title="Dominator Towing Location"
-                    src="https://www.google.com/maps?q=6601+Grissom+Rd+Denton+TX+76208&output=embed"
-                    className="w-full h-[400px] rounded-lg"
-                    allowFullScreen=""
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    style={{ border: 0 }}
-                  ></iframe>
+  title="Dominator Towing Location"
+  src="https://www.google.com/maps?q=33.202985,-97.062940&z=15&output=embed"
+  className="w-full h-[400px] rounded-lg"
+  allowFullScreen=""
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+  style={{ border: 0 }}
+></iframe>
+
                 </div>
               </div>
             </div>

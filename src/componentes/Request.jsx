@@ -140,7 +140,7 @@ const Request = () => {
             {/* IMAGES */}
             <div className="flex flex-col gap-6 w-full lg:w-[260px] items-center px-4 lg:px-0">
               <img src="/Images/logo.png" alt="Company Logo" className="rounded-xl object-contain w-full max-h-[160px]" />
-              <img src="/Images/servicio.jpg" alt="Service Preview" className="rounded-xl object-contain w-full max-h-[160px]" />
+              <img src="/Images/servicio.png" alt="Service Preview" className="rounded-xl object-contain w-full max-h-[160px]" />
             </div>
           </div>
         </div>

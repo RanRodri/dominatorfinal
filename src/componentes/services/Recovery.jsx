@@ -14,7 +14,7 @@ class Recovery extends Component {
               <div className="flex flex-col gap-6 rounded-xl bg-cover bg-center bg-no-repeat min-h-[480px] items-start justify-end p-6 md:p-10"
                 style={{
                   backgroundImage:
-                    'linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url(/Images/recovery.jpg)',
+                    'linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url(/Images/road.jpg)',
                 }}
               >
                 <div className="flex flex-col gap-2 text-left">

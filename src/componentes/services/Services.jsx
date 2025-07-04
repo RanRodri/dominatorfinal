@@ -16,7 +16,7 @@ class Services extends Component {
         name: "Recovery",
         desc: "Assistance for vehicles stuck in ditches, mud, or off-road conditions.",
         path: "/recovery",
-        img: "/Images/recovery.jpg",
+        img: "/Images/road.jpg",
       },
       {
         name: "Car Lockout",
@@ -34,19 +34,19 @@ class Services extends Component {
         name: "Fuel Delivery",
         desc: "Out of gas? We’ll deliver fuel to your location anytime, anywhere.",
         path: "/fueldelivery",
-        img: "/Images/delivery.jpg",
+        img: "/Images/fueldelivery2.jpg",
       },
       {
         name: "Impound Management",
         desc: "Support with impounded vehicles and coordination with local impound lots.",
         path: "/management",
-        img: "/Images/management.jpg",
+        img: "/Images/delivery.jpg",
       },
       {
         name: "Emergency Roadside",
         desc: "Full roadside assistance including flat tires, breakdowns, and minor repairs.",
         path: "/roadside",
-        img: "/Images/road.jpg",
+        img: "/Images/camaro.jpg",
       },
     ];
 

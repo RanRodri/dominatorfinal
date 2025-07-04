@@ -25,12 +25,12 @@ class Home extends Component {
   render() {
     const services = [
       { name: "Towing", img: "/Images/towing.jpg" },
-      { name: "Recovery", img: "/Images/recovery.jpg" },
+      { name: "Recovery", img: "/Images/road.jpg" },
       { name: "Car Lockout", img: "/Images/carlockout1.jpg" },
       { name: "Jump Start", img: "/Images/jumpstart1.jpg" },
       { name: "Fuel Delivery", img: "/Images/fueldelivery1.jpg" },
       { name: "Impound Management", img: "/Images/management.jpg" },
-      { name: "Emergency Roadside", img: "/Images/emergenci.jpg" },
+      { name: "Emergency Roadside", img: "/Images/camaro.jpg" },
     ];
 
     return (
