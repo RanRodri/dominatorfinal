@@ -85,7 +85,7 @@ const Footer = () => {
             Need help now? Call us 24/7!
           </h2>
           <a
-            href="/request"
+            href="tel:+1-469-809-0244"
             className="bg-orange-accent text-white font-semibold py-3 px-8 rounded-lg hover:bg-orange-600 transition-colors text-lg"
           >
             Call Now
